@@ -1,0 +1,17 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    properties:
+      hibernate:
+        dialec: org.hibernate.dialect.MySQL5Dialect
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true

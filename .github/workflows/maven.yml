@@ -25,9 +25,6 @@ jobs:
     - name: Start MySQL
       uses: samin/mysql-action@v1.3
       with:
-        host port: 3306
-        container port: 3306
-        mysql user: root        
-        mysql password: root      
+        host port: 3306              
     - name: Build with Maven
       run: mvn clean install

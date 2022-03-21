@@ -1,4 +1,4 @@
-package com.example.springbootdatajpa;
+/*package com.example.springbootdatajpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,4 +10,4 @@ class SpringBootDataJpaApplicationTests {
 	void contextLoads() {
 	}
 
-}
+}*/

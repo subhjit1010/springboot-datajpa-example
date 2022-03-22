@@ -4,11 +4,11 @@ server:
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/world
+    url: jdbc:mysql://mysql:3306/world?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
   jpa:
-    database: mysql
+    database: world
     properties:
       hibernate:
         dialec: org.hibernate.dialect.MySQL5Dialect

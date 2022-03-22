@@ -4,16 +4,16 @@ services:
     build: .
     restart: always
     ports:
-      - 8080:8090
+      - "8080:8090"
     depends_on:
-      - mysql_db
+      - mysql
     links:
-      - mysql_db:world
+      - mysql:world
   mysql_db:
-    image: "mysql:8.0"
+    image: mysql:8.0.26
     restart: always
     ports:
-      - 3307:3306
+      - "3307:3306"
     environment:
       MYSQL_DATABASE: world
       MYSQL_PASSWORD: root

@@ -1,18 +1,22 @@
-version: "3.7"
+
+version: '3.7'
+
 services:
-  api_service:
-    build: .
-    restart: always
-    ports:
-      - "8080:8090"
-    depends_on:
-      - mysql
-  mysql:
+  docker-mysql:
     image: mysql:8.0.26
-    restart: always
-    ports:
-      - "3307:3306"
     environment:
-      MYSQL_DATABASE: world
-      MYSQL_PASSWORD: root
-      MYSQL_ROOT_PASSWORD: root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=world
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3307:3306
+
+  app:
+    image: springboot-jpa-image:latest
+    ports:
+      - 8091:8091
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://docker-mysql:3306/world?autoReconnect=true&useSSL=false
+    depends_on:
+      - docker-mysql

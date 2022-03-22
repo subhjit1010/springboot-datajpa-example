@@ -9,7 +9,7 @@ services:
       - mysql
     links:
       - mysql:world
-  mysql_db:
+  mysql:
     image: mysql:8.0.26
     restart: always
     ports:

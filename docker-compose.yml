@@ -13,7 +13,7 @@ services:
       - 3307:3306
 
   app:
-    image: springboot-jpa-image:latest
+    image: subhojitdutta01/springboot-jpa-image:latest
     ports:
       - 8091:8091
     environment:
